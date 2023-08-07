@@ -1,0 +1,20 @@
+.container {
+  width: 600px;
+}
+
+.question {
+  background: lightgreen;
+}
+
+#answer {
+  width: 70px;
+}
+
+img {
+  border-radius: 50%;
+  width: 100%;
+}
+
+.hide {
+  display: none;
+}

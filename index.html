@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row header">
+        <div class="col"></div>
+        <div class="col-3">
+          <span>score: </span>
+          <span id="score">0</span> /500
+        </div>
+      </div>
+      <div class="row">
+        <div class="col text-center">
+          <span id="result">result</span>
+        </div>
+      </div>
+      <div class="row p-5 question">
+        <div class="col">
+          <span id="first">15</span>
+        </div>
+        <div class="col">
+          <span id="operator">+</span>
+        </div>
+        <div class="col">
+          <span id="second">15</span>
+        </div>
+        <div class="col">
+          =
+        </div>
+        <div class="col">
+          <input type="text" id="answer">
+        </div>
+        <div class="col">
+          <input type="button" value="submit" id="submit">
+        </div>
+      </div>
+      <div class="row text-center reward hide">
+        <div class="col">
+          Well done!
+        </div>
+      </div>
+      <div class="row reward hide">
+        <div class="col p-3">
+          <a href="https://www.youtube.com/@HutaChan">
+            <img src="https://yt3.googleusercontent.com/ytc/AOPolaTI7Q0puDlASNkWtL7CeD2J7oWSpc_cL6F8MJEVEg=s176-c-k-c0x00ffffff-no-rj" alt="">
+          </a>
+        </div>
+
+        <div class="col p-3">
+          <a href="https://www.youtube.com/@artforkidshub">
+            <img src="https://yt3.googleusercontent.com/yMJpylA3-0U_Y6YxpjOojp7q-R6uRlSl3TVg8nD0YhBB_RVAbbWJnlb3IMPElyMErnDsM3HQlZo=s176-c-k-c0x00ffffff-no-rj" alt="">
+          </a>
+        </div>
+
+        <div class="col p-3">
+          <a href="https://www.youtube.com/@HeyJini">
+            <img src="https://yt3.googleusercontent.com/ytc/AOPolaSKDqNQf97OA_OiOq-h7YhudzmOBnwThCoI30XuuA=s176-c-k-c0x00ffffff-no-rj" alt="">
+          </a>
+        </div>
+
+      </div>
+    </div>
+    <script src="math.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  </body>
+</html>
+
