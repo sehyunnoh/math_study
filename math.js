@@ -42,11 +42,11 @@ function refresh() {
 }
 
 function correct() {
-  score.innerHTML = parseInt(score.innerHTML) + 1;
+  score.innerHTML = +score.innerHTML + 1;
   result.innerHTML = 'Correct!';
   question.style.backgroundColor = 'lightgreen';
 
-  if (parseInt(score.innerHTML) >= 2) {
+  if (parseInt(score.innerHTML) >= 1) {
     question.style.backgroundColor = 'gold';
     result.innerHTML = 'You win!';
     submit.disabled = true;
@@ -57,7 +57,7 @@ function correct() {
 }
 
 function incorrect() {
-  score.innerHTML = parseInt(score.innerHTML) - 1;
+  score.innerHTML = +score.innerHTML - 1;
   result.innerHTML = 'Incorrect!';
   question.style.backgroundColor = 'rgba(255, 124, 124, 0.8)';
 }
@@ -65,7 +65,7 @@ function incorrect() {
 
 submit.addEventListener('click', () => {
   if (operators[operatorIndex] === '/') {
-    if (+answer.value === parseInt(parseInt(first.innerHTML) / parseInt(second.innerHTML))) {
+    if (+answer.value === parseInt(+first.innerHTML / +second.innerHTML)) {
       correct();
     } else {
       incorrect();
