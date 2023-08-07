@@ -46,7 +46,7 @@ function correct() {
   result.innerHTML = 'Correct!';
   question.style.backgroundColor = 'lightgreen';
 
-  if (parseInt(score.innerHTML) >= 1) {
+  if (parseInt(score.innerHTML) >= 100) {
     question.style.backgroundColor = 'gold';
     result.innerHTML = 'You win!';
     submit.disabled = true;
