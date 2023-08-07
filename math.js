@@ -22,10 +22,10 @@ function refresh() {
   let sMin = 1;
   let sMax = 0;
   if (operators[operatorIndex] === '+') {
-    fMax = sMax = 100000;
+    fMax = sMax = 100;
   } else if (operators[operatorIndex] === '-') {
-    fMax = 1001;
-    sMax = 301;
+    fMax = 100;
+    sMax = 100;
   } else if (operators[operatorIndex] === '*') {
     fMax = 11;
     sMax = 12;
@@ -41,25 +41,43 @@ function refresh() {
   answer.value = '';
 }
 
+function correct() {
+  score.innerHTML = parseInt(score.innerHTML) + 1;
+  result.innerHTML = 'Correct!';
+  question.style.backgroundColor = 'lightgreen';
+
+  if (parseInt(score.innerHTML) === 500) {
+    question.style.backgroundColor = 'gold';
+    result.innerHTML = 'You win!';
+    submit.disabled = true;
+
+    reward[0].classList.remove('hide');
+    reward[1].classList.remove('hide');
+  }
+}
+
+function incorrect() {
+  score.innerHTML = parseInt(score.innerHTML) - 1;
+  result.innerHTML = 'Incorrect!';
+  question.style.backgroundColor = 'rgba(255, 124, 124, 0.8)';
+}
+
+
 submit.addEventListener('click', () => {
-  if (answer.value == eval(first.innerHTML + operators[operatorIndex] + second.innerHTML)) {
-    score.innerHTML = parseInt(score.innerHTML) + 1;
-    result.innerHTML = 'Correct!';
-    question.style.backgroundColor = 'lightgreen';
-
-    if (parseInt(score.innerHTML) === 500) {
-      question.style.backgroundColor = 'gold';
-      result.innerHTML = 'You win!';
-      submit.disabled = true;
-
-      reward[0].classList.remove('hide');
-      reward[1].classList.remove('hide');
+  if (operators[operatorIndex] === '/') {
+    if (+answer.value === parseInt(parseInt(first.innerHTML) / parseInt(second.innerHTML))) {
+      correct();
+    } else {
+      incorrect();
     }
   } else {
-    score.innerHTML = parseInt(score.innerHTML) - 1;
-    result.innerHTML = 'Incorrect!';
-    question.style.backgroundColor = 'rgba(255, 124, 124, 0.8)';
+    if (answer.value == eval(first.innerHTML + operators[operatorIndex] + second.innerHTML)) {
+     correct();
+    } else {
+     incorrect();
+    }
   }
+
   refresh();
 });
 
